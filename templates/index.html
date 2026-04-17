@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YojanaMitra AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- 🌟 HERO SECTION -->
+<div class="hero">
+
+    <div class="hero-content">
+        <h1>🇮🇳 YojanaMitra AI</h1>
+        <p>Your Intelligent Government Scheme Assistant</p>
+
+        <div class="feature-box">
+            <div>📄 PDF Analysis</div>
+            <div>🖼️ Image OCR</div>
+            <div>🧠 AI Scheme Matching</div>
+            <div>🌐 Kannada • Hindi • English</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 🌟 MAIN CONTAINER -->
+<div class="container">
+
+    <form method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+
+        <input type="text" name="query" placeholder="Ask your question (Kannada / Hindi / English)" required>
+
+        <input type="text" name="income" placeholder="Annual Income (₹)" required>
+
+        <input type="text" name="state" placeholder="State" required>
+
+        <input type="text" name="education" placeholder="Education" required>
+
+        <input type="text" name="category" placeholder="Category (Student / Farmer / etc)" required>
+
+        <div class="upload-box">
+            📄 Upload PDF / Image
+            <input type="file" name="file" accept=".pdf,.png,.jpg,.jpeg">
+        </div>
+
+        <button type="submit">🔍 Find Schemes</button>
+
+    </form>
+
+    <!-- 🔥 LOADING OVERLAY -->
+    <div id="loading-overlay">
+        <div class="loader"></div>
+        <p>AI is analyzing your profile...</p>
+        <div class="dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <hr>
+
+    {% if answer %}
+    <div class="result">
+        <h2>🎯 Result</h2>
+        <pre>{{ answer }}</pre>
+    </div>
+    {% endif %}
+
+</div>
+
+<script>
+function showLoading() {
+    document.getElementById("loading-overlay").style.display = "flex";
+}
+</script>
+
+</body>
+</html>
