@@ -1,4 +1,6 @@
 flask
+pandas
+open-ai
 langchain
 langchain-community
 langchain-huggingface
@@ -6,5 +8,7 @@ faiss-cpu
 pytesseract
 pillow
 pymupdf
+gunicorn
 sentence-transformers
 ollama
+pandas
