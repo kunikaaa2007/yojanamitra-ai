@@ -1,6 +1,6 @@
 flask
 pandas
-open-ai
+openai
 langchain
 langchain-community
 langchain-huggingface
